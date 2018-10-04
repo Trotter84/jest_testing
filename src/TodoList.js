@@ -1,7 +1,12 @@
 import React from 'react'
 
 class TodoList extends React.Component {
-  state = { items: [], name: '' }
+  state = { items: [], name: '' , color: ''}
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.color && props.color !== state.color)
+      return { color: props.color }
+  }
 
   handleChange = (e) => {
     const { name, value } = e.target
@@ -19,6 +24,10 @@ class TodoList extends React.Component {
     return (
       <>
         <form onSubmit={this.handleSubmit}>
+        <label
+          style={ color ? { backgroundColor: color } : {} }
+          Add A Todo
+          ></label>
           <input
             name="name"
             value={name}

@@ -9,7 +9,7 @@ it('sums two numbers', () => {
   expect(actual).toEqual(expected)
 })
 
-it('capitalizes a string', () => {
+it ('capitalizes a string', () => {
   const str = 'hello'
   const expected = 'Hello'
   const actual = capitalize(str)
